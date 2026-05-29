@@ -48,28 +48,7 @@ print(W.grad)  # dL/dW computed automatically
 
 ## Training on MNIST
 
-```python
-from nanograd.nn import Sequential, Linear, ReLU, CrossEntropyLoss
-from nanograd.optim import Adam
-from nanograd.data import load_mnist, get_batches
-
-model = Sequential(
-    Linear(784, 128),
-    ReLU(),
-    Linear(128, 64),
-    ReLU(),
-    Linear(64, 10)
-)
-
-optimizer = Adam(model.parameters(), lr=0.001)
-criterion = CrossEntropyLoss()
-
-for xb, yb in get_batches(X_train, y_train):
-    loss = criterion(model(xb), yb)
-    loss.backward()
-    optimizer.step()
-    optimizer.zero_grad()
-```
+Trained on MNIST handwriting to numbers classifying dataset; takes in a 28x28 image with 784 pixels and predicts a probability distribution across 10 numbers.
 
 ### Results
 

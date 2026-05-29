@@ -73,7 +73,7 @@ for xb, yb in get_batches(X_train, y_train):
 
 ### Results
 
-training_curves.png
+(training_curves.png)
 
 Loss drops from 0.40 → 0.01 over 20 epochs. Final test accuracy: **97.79%**.
 
